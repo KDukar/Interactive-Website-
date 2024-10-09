@@ -1,0 +1,18 @@
+<?php
+include './FunctionQuery.php';
+include './header.php';
+?>
+<div style="margin-left: 8px;">
+    <img src="images/img3.jpg" alt=""/>
+    <div class="text" style="margin-bottom: 300px;">Packages</div>
+</div>
+<h2 style="text-align: center; font-size: 35px; color: #500;">Package Details</h2>
+<div style="padding: 5px 20px 15px 20px; border: 1px solid lightgrey; border-radius: 3px;     width: 50%;
+     margin-left: 380px; margin-bottom: 10px;"><h3>Your Booking is confirmed!!</h3>
+    <h4>Please check your mail....</h4></div>
+<?php include './Footer.php';?>
+
+
+</body>
+</html>
+
