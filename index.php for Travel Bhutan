@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<?php include './header.php';?>
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="images/img1.jpg" style="width:100%">
+            <div class="text">Find Best places to visit</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="images/img2.jpg" style="width:100%">
+            <div class="text">Get new packages every day</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="images/img3.jpg" style="width:100%">
+            <div class="text">Travel with leaisure</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+
+
+    <div class="about-section">
+        <h1>About Travel Bhutan</h1>
+        <p>The tourism sector has been gaining substantial progress in recent years, specifically,
+            in developing countries like Bhutan. It is because of its unique landscapes, culture, and
+            tradition. 
+            However, despite its exponential growth, managing a sustainable tour agency in the
+            fast-changing technology involves challenges including booking and payment processing. 
+        </p>
+        <p>To
+            streamline and facilitate real-time tour operations, the development of a web-based
+            information system for “Travel Bhutan Agency” has become an important requirement.</p>
+    </div>
+   <?php include './Footer.php';?>
+
+    <script src="js/slider.js" type="text/javascript"></script>
+
+</body>
+</html>
+
