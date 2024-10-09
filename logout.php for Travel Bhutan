@@ -1,0 +1,16 @@
+<?php
+session_start();
+
+// Check if session is active
+if (isset($_SESSION["id"])) {
+    // Destroy the session
+    session_destroy();
+    echo "Logging out..."; // Debugging message
+    header("Location: index.php");
+    exit();
+} else {
+    echo "No active session found."; // Debugging message
+    header("Location: index.php");
+    exit();
+}
+?>
