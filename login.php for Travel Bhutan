@@ -1,0 +1,27 @@
+<?php
+include './header.php';
+?>
+<div style="margin-left: 8px;">
+    <img src="images/img3.jpg" alt=""/>
+    <div class="text" style="margin-bottom: 300px;">Authentication</div>
+</div>
+<h3 style="text-align: center; font-size: 35px; color: #500;">Login Form</h3>
+
+<div class="container1" style="margin-bottom: 10px;">
+    <form action="LoginAccess.php" method="POST">
+        <label for="fname">User Name</label>
+        <input type="text" id="fname" name="username" placeholder="Your User name..">
+
+        <label for="lname">Password</label>
+        <input type="password" id="lname" name="password" placeholder="Your Password..">
+
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<?php include './Footer.php';?>
+
+
+</body>
+</html>
+
