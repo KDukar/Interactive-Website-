@@ -1,0 +1,79 @@
+<?php
+
+include('./DatabaseFile.php');
+
+function booking($date,$amount,$tperson,$id,$pid) {
+    $d = new Database();
+    $dbh = $d->connect();
+
+    // select only movies title.
+    $statement = $dbh->prepare('INSERT INTO `booking`(`BookingDate`, `BookingAmount`, `TotalPerson`, `CustomerID`, `PackageID`) VALUES (?,?,?,?,?)');
+
+    $statement->bindValue(1, $date);
+    $statement->bindValue(2, $amount);
+    $statement->bindValue(3, $tperson);
+    $statement->bindValue(4, $id);
+    $statement->bindValue(5, $pid);
+    
+    //execute the SQL.
+    $statement->execute();
+
+    return $statement;
+}
+
+function packages() {
+    $d = new Database();
+    $dbh = $d->connect();
+
+    // select only movies title.
+    $statement = $dbh->prepare('SELECT `PackageID`, `Description`, `Period`, `Amount`, `PackageName`,imageURL FROM `package`');
+
+//execute the SQL.
+    $statement->execute();
+
+    return $statement;
+}
+
+function single($id) {
+    $d = new Database();
+    $dbh = $d->connect();
+
+    // select only movies title.
+    $statement = $dbh->prepare('SELECT `PackageID`, `Description`, `Period`, `Amount`, `PackageName`,imageURL FROM `package` WHERE PackageID=?');
+
+//execute the SQL.
+    $statement->bindValue(1, $id);
+    $statement->execute();
+
+    return $statement;
+}
+
+function loginCheck($uname,$pass) {
+    $d = new Database();
+    $dbh = $d->connect();
+
+    // select only movies title.
+    $statement = $dbh->prepare('SELECT `CustomerID` FROM `customer` WHERE EmailID=? and Password=?');
+
+    $statement->bindValue(1, $uname);
+    $statement->bindValue(2, $pass);
+//execute the SQL.
+    $statement->execute();
+
+    return $statement;
+}
+
+function viewBooking($id) {
+    $d = new Database();
+    $dbh = $d->connect();
+
+    // select only movies title.
+    $statement = $dbh->prepare('SELECT booking.BookingID, booking.BookingDate, booking.BookingAmount, booking.TotalPerson, Package.PackageName FROM `booking` JOIN package ON package.PackageID=booking.PackageID WHERE CustomerID=?');
+
+//execute the SQL.
+    $statement->bindValue(1, $id);
+    $statement->execute();
+
+    return $statement;
+}
+
