@@ -1,0 +1,13 @@
+<?php
+
+session_start();
+include('./FunctionQuery.php');
+
+$date = trim($_POST['date']);
+$tperson = trim($_POST['tperson']);
+$amt = trim($_POST['amount']);
+$pid = trim($_POST['pid']);
+$id = $_SESSION["id"];
+$statement = booking($date, $amt, $tperson, $id, $pid);
+header("Location: bookingConfirmation.php");
+
